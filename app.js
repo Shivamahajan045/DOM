@@ -14,6 +14,15 @@ const handleFormSubmit = (event) => {
   li.textContent =
     li.textContent = `${myObj.username} - ${myObj.email} - ${myObj.phone}`;
   ul.appendChild(li);
+  let btn = document.createElement("button");
+  btn.textContent = "Delete";
+  li.appendChild(btn);
+  btn.addEventListener("click", (event) => {
+    let parentElement = event.target.parentElement;
+    console.log(parentElement);
+    parentElement.remove();
+    localStorage.removeItem(myObj.email);
+  });
 };
 
 module.exports = handleFormSubmit;
