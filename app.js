@@ -1,10 +1,14 @@
-let form = document.querySelector("form");
-form.addEventListener("submit", (event) => {
+function handleFormSubmit(event) {
   event.preventDefault();
-  localStorage.setItem("Username", `${event.target.username.value}`);
-  localStorage.setItem("Email", `${event.target.email.value}`);
-  localStorage.setItem("Phone", `${event.target.phone.value}`);
-  console.log(localStorage.getItem("Username"));
-  console.log(localStorage.getItem("Email"));
-  console.log(localStorage.getItem("Phone"));
-});
+  let name = event.target.username.value;
+  let email = event.target.email.value;
+  let phone = event.target.phone.value;
+  let myObj = {
+    username: name,
+    email: email,
+    phone: phone,
+  };
+  localStorage.setItem("User Details", JSON.stringify(myObj));
+}
+
+module.exports = handleFormSubmit;
