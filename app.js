@@ -1,4 +1,4 @@
-function handleFormSubmit(event) {
+const handleFormSubmit = (event) => {
   event.preventDefault();
   let name = event.target.username.value;
   let email = event.target.email.value;
@@ -8,7 +8,12 @@ function handleFormSubmit(event) {
     email: email,
     phone: phone,
   };
-  localStorage.setItem("User Details", JSON.stringify(myObj));
-}
+  let ul = document.querySelector("ul");
+  let li = document.createElement("li");
+  localStorage.setItem(myObj.email, JSON.stringify(myObj));
+  li.textContent =
+    li.textContent = `${myObj.username} - ${myObj.email} - ${myObj.phone}`;
+  ul.appendChild(li);
+};
 
 module.exports = handleFormSubmit;
