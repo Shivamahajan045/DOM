@@ -1,3 +1,4 @@
+// Write your code below:
 const handleFormSubmit = (event) => {
   event.preventDefault();
   let name = event.target.username.value;
@@ -19,7 +20,21 @@ const handleFormSubmit = (event) => {
   li.appendChild(btn);
   btn.addEventListener("click", (event) => {
     let parentElement = event.target.parentElement;
-    console.log(parentElement);
+    parentElement.remove();
+    localStorage.removeItem(myObj.email);
+  });
+
+  let ediBtn = document.createElement("button");
+  ediBtn.textContent = "Edit";
+  li.appendChild(ediBtn);
+  ediBtn.addEventListener("click", (event) => {
+    let parentElement = event.target.parentElement;
+    let storedData = JSON.parse(localStorage.getItem(myObj.email));
+    if (storedData) {
+      document.getElementById("username").value = storedData.username;
+      document.getElementById("email").value = storedData.email;
+      document.getElementById("phone").value = storedData.phone;
+    }
     parentElement.remove();
     localStorage.removeItem(myObj.email);
   });
