@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1 class="text-center my-4">Expense Tracker</h1>
+    <div class="container">
+      <form class="bg-light p-4 rounded shadow-sm">
+        <div class="row gy-4 align-items-center">
+          <div class="col-md-4">
+            <div class="form-floating">
+              <input
+                class="form-control"
+                type="number"
+                id="exp-amount"
+                name="amount"
+                placeholder="enter amount"
+              />
+              <label class="form-label" for="exp-amount"
+                >Choose expense amount:
+              </label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-floating">
+              <input
+                class="form-control"
+                type="text"
+                id="desc"
+                name="description"
+                placeholder="description"
+              />
+              <label class="form-label" for="desc">Choose description: </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-floating">
+              <select class="form-select" name="category" id="category">
+                <option>Movies</option>
+                <option>Travel</option>
+                <option>Food</option>
+              </select>
+              <label class="form-label" for="category">Choose category: </label>
+            </div>
+          </div>
+          <div class="col-md-1 d-grid">
+            <button type="submit" class="btn btn-outline-success">
+              <i class="bi bi-plus-circle"></i> Add
+            </button>
+          </div>
+        </div>
+      </form>
+      <ul class="list-group mt-4"></ul>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
